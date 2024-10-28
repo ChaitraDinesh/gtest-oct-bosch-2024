@@ -53,5 +53,5 @@ TEST(string_calculator_add, when_delimited_with_newline_and_comma)
 {
   StringCalculator objunderTest;
   int actualValue = objunderTest.Add("1\n2,3");
-  ASSERT_EQ(12, actualValue);
+  ASSERT_EQ(6, actualValue);
 }
