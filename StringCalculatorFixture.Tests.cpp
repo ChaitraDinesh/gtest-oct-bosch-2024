@@ -54,7 +54,7 @@ TEST_F(StringCalculatorAddFixture, when_delimited_with_newline_and_comma)
   ASSERT_EQ(actualValue, 6);
 }
 
-TEST(StringCalculatorAddFixture, when_passed_a_delimiter)
+TEST_F(StringCalculatorAddFixture, when_passed_a_delimiter)
 {
   int actualValue = objUnderTest->Add("//;\n1;2;3");
   ASSERT_EQ(actualValue, 6);
