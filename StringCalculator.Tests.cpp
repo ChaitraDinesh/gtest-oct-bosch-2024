@@ -84,7 +84,7 @@ TEST(string_calculator_add, when_passed_multiple_delimiters)
   ASSERT_EQ(6, actualValue);
 }
 
-TEST(string_calculator_add, when_passed_multicharacter_delimiter)
+TEST(string_calculator_add, when_passed_multiple_multicharacter_delimiter)
 {
   StringCalculator objunderTest;
   int actualValue = objunderTest.Add("//[***]\n1***2***3//[***]\n1***2***3");
