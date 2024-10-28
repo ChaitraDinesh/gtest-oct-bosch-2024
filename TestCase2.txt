@@ -1,3 +1,7 @@
+#include "stdafx.h"
+#include "../StringCalculator/StringCalculator.h"
+using namespace igloo;
+
 Describe(string_calculator_add) {
   Describe(when_passed_a_single_number) {
 		It (returns_0_for_empty_string) {
