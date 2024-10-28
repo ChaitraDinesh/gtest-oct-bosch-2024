@@ -55,3 +55,17 @@ TEST(string_calculator_add, when_delimited_with_newline_and_comma)
   int actualValue = objunderTest.Add("1\n2,3");
   ASSERT_EQ(6, actualValue);
 }
+
+TEST(string_calculator_add, when_passed_a_delimiter)
+{
+  StringCalculator objunderTest;
+  int actualValue = objunderTest.Add("//;\n1;2;3");
+  ASSERT_EQ(6, actualValue);
+}
+
+TEST(string_calculator_add, when_passed_numbers_over_1000)
+{
+  StringCalculator objunderTest;
+  int actualValue = objunderTest.Add("1,2,1001");
+  ASSERT_EQ(2, actualValue);
+}
