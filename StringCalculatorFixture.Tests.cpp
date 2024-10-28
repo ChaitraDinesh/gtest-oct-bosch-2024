@@ -20,7 +20,7 @@ TEST_F(StringCalculatorAddFixture, when_passed_a_single_number_returns_0_for_emp
   ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST(StringCalculatorAddFixture, when_passed_a_single_number_returns_0_for_zero)
+TEST_F(StringCalculatorAddFixture, when_passed_a_single_number_returns_0_for_zero)
 {
   string input = "0";
   int expectedValue = 0;
@@ -28,7 +28,7 @@ TEST(StringCalculatorAddFixture, when_passed_a_single_number_returns_0_for_zero)
   ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST(StringCalculatorAddFixture, when_passed_a_single_number_returns_1_for_one)
+TEST_F(StringCalculatorAddFixture, when_passed_a_single_number_returns_1_for_one)
 {
   string input = "1";
   int expectedValue = 1;
@@ -36,19 +36,19 @@ TEST(StringCalculatorAddFixture, when_passed_a_single_number_returns_1_for_one)
   ASSERT_EQ(actualValue, expectedValue);
 }
 
-TEST(StringCalculatorAddFixture, when_passed_two_comma_delimited_numbers)
+TEST_F(StringCalculatorAddFixture, when_passed_two_comma_delimited_numbers)
 {
   int actualValue = objUnderTest->Add("5,6");
   ASSERT_EQ(actualValue, 11);
 }
 
-TEST(StringCalculatorAddFixture, when_passed_multiple_comma_delimited_numbers)
+TEST_F(StringCalculatorAddFixture, when_passed_multiple_comma_delimited_numbers)
 {
   int actualValue = objUnderTest->Add("3,4,5");
   ASSERT_EQ(actualValue, 12);
 }
 
-TEST(StringCalculatorAddFixture, when_delimited_with_newline_and_comma)
+TEST_F(StringCalculatorAddFixture, when_delimited_with_newline_and_comma)
 { 
   int actualValue = objUnderTest->Add("1\n2,3");
   ASSERT_EQ(actualValue, 6);
@@ -60,25 +60,25 @@ TEST(StringCalculatorAddFixture, when_passed_a_delimiter)
   ASSERT_EQ(actualValue, 6);
 }
 
-TEST(StringCalculatorAddFixture, when_passed_numbers_over_1000)
+TEST_F(StringCalculatorAddFixture, when_passed_numbers_over_1000)
 {
   int actualValue = objUnderTest->Add("1,2,1001");
   ASSERT_EQ(actualValue, 3);
 }
 
-TEST(StringCalculatorAddFixture, when_passed_multicharacter_delimiter)
+TEST_F(StringCalculatorAddFixture, when_passed_multicharacter_delimiter)
 {
   int actualValue = objUnderTest->Add("//[***]\n1***2***3");
   ASSERT_EQ(actualValue, 6);
 }
 
-TEST(StringCalculatorAddFixture, when_passed_multiple_delimiters)
+TEST_F(StringCalculatorAddFixture, when_passed_multiple_delimiters)
 {
   int actualValue = objUnderTest->Add("//[***]\n1***2***3***4");
   ASSERT_EQ(actualValue, 10);
 }
 
-TEST(StringCalculatorAddFixture, when_passed_multiple_multicharacter_delimiter)
+TEST_F(StringCalculatorAddFixture, when_passed_multiple_multicharacter_delimiter)
 {
   int actualValue = objUnderTest->Add("//[***]\n1***2***3//[***]\n1***2***3");
   ASSERT_EQ(actualValue, 12);
