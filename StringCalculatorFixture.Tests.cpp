@@ -13,7 +13,7 @@ void TearDown(){
 }
 };
 
-TEST_F(StringCalculatorAddFixture, returns_0_for_empty())
+TEST_F(StringCalculatorAddFixture, returns_0_for_empty)
 {
   string input = "";
   int expectedValue = "0";
