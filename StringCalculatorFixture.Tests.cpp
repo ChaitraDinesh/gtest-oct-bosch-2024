@@ -2,15 +2,14 @@
 #include <gtest/gtest.h>
 
 class StringCalculatorAddFixture:public testing::Test{
-protected:
-  StringCalculator *objUnderTest;
-void Setup() override{
-  objUnderTest= new StringCalculator();
-}
-
-void TearDown(){
-  delete objUnderTest;
-}
+  protected:
+    StringCalculator *objUnderTest;
+  void SetUp() override {
+      objUnderTest=new StringCalculator();
+  }
+  void TearDown(){
+        delete objUnderTest;
+  }
 };
 
 TEST_F(StringCalculatorAddFixture, when_passed_a_single_number_returns_0_for_empty)
