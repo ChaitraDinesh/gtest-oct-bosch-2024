@@ -67,5 +67,26 @@ TEST(string_calculator_add, when_passed_numbers_over_1000)
 {
   StringCalculator objunderTest;
   int actualValue = objunderTest.Add("1,2,1001");
-  ASSERT_EQ(2, actualValue);
+  ASSERT_EQ(3, actualValue);
+}
+
+TEST(string_calculator_add, when_passed_multicharacter_delimiter)
+{
+  StringCalculator objunderTest;
+  int actualValue = objunderTest.Add("//[***]\n1***2***3");
+  ASSERT_EQ(6, actualValue);
+}
+
+TEST(string_calculator_add, when_passed_multiple_delimiters)
+{
+  StringCalculator objunderTest;
+  int actualValue = objunderTest.Add("//[***]\n1***2***3");
+  ASSERT_EQ(6, actualValue);
+}
+
+TEST(string_calculator_add, when_passed_multicharacter_delimiter)
+{
+  StringCalculator objunderTest;
+  int actualValue = objunderTest.Add("//[***]\n1***2***3//[***]\n1***2***3");
+  ASSERT_EQ(12, actualValue);
 }
