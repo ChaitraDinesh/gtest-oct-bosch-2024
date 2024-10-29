@@ -22,7 +22,7 @@ class StringCalculatorAddParameterizedFixture:
 };
 
 INSTANTIATE_TEST_SUITE_P(ValidValueDataSet, StringCalculatorAddParameterizedFixture, testing::Values(
-  make_tuple("",0), make_tuple("0",0), make_tuple("1",1), make_tuple("1,2",2)
+  make_tuple("",0), make_tuple("0",0), make_tuple("1",1), make_tuple("1,2",3)
 ));
 
 TEST_P(StringCalculatorAddParameterizedFixture, DataDrivenTestCase)
