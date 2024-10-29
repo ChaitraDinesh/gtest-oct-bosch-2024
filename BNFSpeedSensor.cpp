@@ -1,3 +1,8 @@
+#include "ISpeedSensor.h"
+#include <random> 
+#include <string>
+using namespace std;
+
 class BNFSpeedSensor{
         public:
             int   getCurrentSpeed(){
