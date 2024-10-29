@@ -11,7 +11,7 @@ void SpeedMonitor::monitor((IMessageCommunicator* communicator,ISpeedSensor* sen
                  int statusCode= Communiccator->pushMessage(message);
                   if(statusCode > 400){
                       //Log Message to Console
-                       logger->write("Error In Communication Unable to Contact Server "<<to_string(message)+"\n";
+                       logger->write("Error In Communication Unable to Contact Server "+ message +"\n";
                   }
                  
             }
