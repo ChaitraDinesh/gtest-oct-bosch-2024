@@ -25,7 +25,7 @@ INSTANTIATE_TEST_SUITE_P(ValidValueDataSet, StringCalculatorAddParameterizedFixt
   make_tuple("",0), make_tuple("0",0), make_tuple("1",1), make_tuple("1,2",2)
 ));
 
-TEST_F(StringCalculatorAddFixture, returns_0_for_0)
+TEST_F(StringCalculatorAddParameterizedFixture, DataDrivenTestCase)
 {
   string input = std::get<0>(GetParam());
   int expectedValue=std::get<1>(GetParam());
