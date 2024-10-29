@@ -22,13 +22,14 @@ class StringCalculatorAddParameterizedFixture:
 };
 
 INSTANTIATE_TEST_SUITE_P(ValidValueDataSet, StringCalculatorAddParameterizedFixture, testing::Values(
-  make_tuple("",0), make_tuple("0",0), make_tuple("1",1), make_tuple("1,2",3)
+  make_tuple("",0), make_tuple("0",0), make_tuple("1",1), make_tuple("1,2",3), make_tuple("1\n2,3",6),
+  make_tuple("//;\n1;2;3",6), make_tuple("1,2,1001",3), make_tuple("//[***]\n1***2***3",6)
 ));
 
 //fails testcase
-INSTANTIATE_TEST_SUITE_P(NegetiveValuesDataSet,StringCalculatorAddParameterizedFixture,testing::Values(
-  make_tuple("",10),make_tuple("0",12),make_tuple("1",10),make_tuple("4,5",6), make_tuple("1\n2,3",6)
-));
+// INSTANTIATE_TEST_SUITE_P(NegetiveValuesDataSet,StringCalculatorAddParameterizedFixture,testing::Values(
+//   make_tuple("",10),make_tuple("0",12),make_tuple("1",10),make_tuple("4,5",6)
+// ));
 
 TEST_P(StringCalculatorAddParameterizedFixture, DataDrivenTestCase)
 {
