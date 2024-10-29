@@ -3,7 +3,7 @@
 #include <string>
 #include "ILogger.h"
 #include "IMessageCommunicator.h"
-#inlcude "ISpeedSensor.h"
+#include "ISpeedSensor.h"
 using namespace std;
 
 class SpeedMonitor{
