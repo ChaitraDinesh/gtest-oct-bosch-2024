@@ -24,7 +24,7 @@ class StringCalculatorDataDrivenAddFixture:public testing::Test{
 
 TEST_F(StringCalculatorDataDrivenAddFixture, DataDrivenTest)
 {
-  vector<tuple<string,int> dataSet;
+  vector<tuple<string,int>> dataSet;
   dataset.pushback(make_tuple("",0));
   dataset.pushback(make_tuple("0",0));
   dataset.pushback(make_tuple("1",1));
@@ -32,6 +32,6 @@ TEST_F(StringCalculatorDataDrivenAddFixture, DataDrivenTest)
   //iterate
   for(tuple<string,int> dataRow : dataSet)
     {
-      assertEachDataRow(std::get<0>(dataRow),std::get<1>(dataRow))
+      assertEachDataRow(std::get<0>(dataRow),std::get<1>(dataRow));
     }
 }
