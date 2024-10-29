@@ -7,8 +7,13 @@ using namespace std;
 class StringCalculatorDataDrivenAddFixture:public testing::Test{
   protected:
     StringCalculator *objUnderTest;
+    vector<tuple<string,int>> dataSet;
   void SetUp() override {
       objUnderTest=new StringCalculator();
+        dataSet.push_back(make_tuple("",0));
+        dataSet.push_back(make_tuple("0",0));
+        dataSet.push_back(make_tuple("1",1));
+        dataSet.push_back(make_tuple(1,2));
   }
   void TearDown(){
         delete objUnderTest;
@@ -24,14 +29,8 @@ class StringCalculatorDataDrivenAddFixture:public testing::Test{
 
 TEST_F(StringCalculatorDataDrivenAddFixture, DataDrivenTest)
 {
-  vector<tuple<string,int>> dataSet;
-  dataSet.pushback(make_tuple("",0));
-  dataSet.pushback(make_tuple("0",0));
-  dataSet.pushback(make_tuple("1",1));
-  dataSet.pushback(make_tuple(1,2));
   //iterate
-  for(tuple<string,int> dataRow : dataSet)
-    {
+  for(tuple<string,int> dataRow : dataSet){
       assertEachDataRow(std::get<0>(dataRow),std::get<1>(dataRow));
     }
 }
