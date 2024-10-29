@@ -1,8 +1,8 @@
 #include "IMessageCommunicator.h"
-#include <random>
-#inlcude <string>
+#include <random> 
+#include <string>
 using namespace std;
-class IOTCloudCommunicator{
+class IOTCloudCommunicator:public IMessageCommunicator{
     public:
           int  pushMessage(string message){
               //Interact with internet and push the message to MessageQueue
