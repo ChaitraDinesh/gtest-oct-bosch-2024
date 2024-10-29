@@ -25,10 +25,10 @@ class StringCalculatorDataDrivenAddFixture:public testing::Test{
 TEST_F(StringCalculatorDataDrivenAddFixture, DataDrivenTest)
 {
   vector<tuple<string,int>> dataSet;
-  dataset.pushback(make_tuple("",0));
-  dataset.pushback(make_tuple("0",0));
-  dataset.pushback(make_tuple("1",1));
-  dataset.pushback(make_tuple(1,2));
+  dataSet.pushback(make_tuple("",0));
+  dataSet.pushback(make_tuple("0",0));
+  dataSet.pushback(make_tuple("1",1));
+  dataSet.pushback(make_tuple(1,2));
   //iterate
   for(tuple<string,int> dataRow : dataSet)
     {
