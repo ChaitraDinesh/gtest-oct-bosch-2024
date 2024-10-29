@@ -13,7 +13,7 @@ class StringCalculatorDataDrivenAddFixture:public testing::Test{
         dataSet.push_back(make_tuple("",0));
         dataSet.push_back(make_tuple("0",0));
         dataSet.push_back(make_tuple("1",1));
-        dataSet.push_back(make_tuple(1,2));
+        dataSet.push_back(make_tuple("1,2",3));
   }
   void TearDown(){
         delete objUnderTest;
