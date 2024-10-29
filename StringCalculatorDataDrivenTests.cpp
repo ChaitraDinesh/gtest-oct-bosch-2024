@@ -4,7 +4,7 @@
 #include <tuple>
 using namespace std;
 
-class StringCalculatorAddFixture:public testing::Test{
+class StringCalculatorDataDrivenAddFixture:public testing::Test{
   protected:
     StringCalculator *objUnderTest;
   void SetUp() override {
@@ -13,12 +13,14 @@ class StringCalculatorAddFixture:public testing::Test{
   void TearDown(){
         delete objUnderTest;
   }
+
+  void assertEachDataRow(string& input, int expectedValue)
+  {
+    int actualValue = objUnderTest->Add(input);
+    ASSERT_EQ(actualValue, expectedValue);
+  }
 };
-void assertEachDataRow(string& input, int expectedValue)
-{
-  int actualValue = objUnderTest->Add(input);
-  ASSERT_EQ(actualValue, expectedValue);
-}
+
 
 TEST_F(StringCalculatorDataDrivenAddFixture, DataDrivenTest)
 {
@@ -30,6 +32,6 @@ TEST_F(StringCalculatorDataDrivenAddFixture, DataDrivenTest)
   //iterate
   for(tuple<string,int> dataRow : dataSet)
     {
-      assertEachDataRow(dataRow.get<string>(0),dataRow.get<int>(1))
+      assertEachDataRow(std::get<0>(dataRow),std::get<1>(dataRow))
     }
 }
