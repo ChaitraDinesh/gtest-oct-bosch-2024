@@ -20,7 +20,7 @@ add_executable(
   unittestcode
   VehicleSpeedMonitor.cpp
   VehicleSpeedMonitor.Tests.cpp
- 
+  
  )
 target_link_libraries(
   unittestcode
